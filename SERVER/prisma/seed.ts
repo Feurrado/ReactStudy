@@ -15,6 +15,9 @@ async function run() {
   await prisma.habit.deleteMany()
   await prisma.day.deleteMany()
 
+  /**
+   * Create habits
+   */
   await Promise.all([
     prisma.habit.create({
       data: {
@@ -65,7 +68,9 @@ async function run() {
   ])
 
   await Promise.all([
-
+    /**
+     * Habits (Complete/Available): 1/1
+     */
     prisma.day.create({
       data: {
         /** Monday */
@@ -78,6 +83,9 @@ async function run() {
       }
     }),
 
+    /**
+     * Habits (Complete/Available): 1/1
+     */
     prisma.day.create({
       data: {
         /** Friday */
@@ -90,6 +98,9 @@ async function run() {
       }
     }),
 
+    /**
+     * Habits (Complete/Available): 2/2
+     */
     prisma.day.create({
       data: {
         /** Wednesday */
