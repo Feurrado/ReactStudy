@@ -1,5 +1,7 @@
 # SETUP RocketSeat
 
+Obs: falta arrumar a estrutura de todo o código, está "raw" e feio. Se procura beleza acessa meu insta.
+
 Projeto construído no evento SETUP da RocketSeat.
 Server, DB, Web e Mobile.
 
