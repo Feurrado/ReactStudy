@@ -15,7 +15,7 @@ Server, DB, Web e Mobile.
 - CSS
 - React.JS
 - SQLite
-- JavaScript
+- TyperScript
 - Git e GitHub
 - Frameworks diversos como Axios, dayjs, TailWind, Prisma entre outros...
 
