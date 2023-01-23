@@ -3,8 +3,9 @@
 Projeto construído no evento SETUP da RocketSeat.
 Server, DB, Web e Mobile.
 
-![preview](/.github/1.png)
-![preview[(/.github/2.png)
+![preview]( /github/1.png)
+<br>
+![preview]( /github/2.png)
 
 ## 🖱️ Tecnologias
 
