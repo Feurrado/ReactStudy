@@ -1,4 +1,27 @@
-<h1>OPA!</h1>
+# SETUP RocketSeat
 
-<h4> O código está em produção e os commits estão a MIL! <br>
-tudo está bagunçado... eu não entraria aí se fosse você💀 </h3>
+Projeto construído no evento SETUP da RocketSeat.
+Server, DB, Web e Mobile.
+
+![preview](/.github/1.png)
+![preview[(/.github/2.png)
+
+## 🖱️ Tecnologias
+
+- HTML
+- CSS
+- React.JS
+- SQLite
+- JavaScript
+- Git e GitHub
+- Frameworks diversos como Axios, dayjs, TailWind, Prisma entre outros...
+
+## ✉️ Contato
+
+thm.profissional@gmail.com
+[LinkedIn](https://www.linkedin.com/in/engthm/)
+
+## Para fazer tudo rodar.
+
+Você deverá instalar alguns frameworks, eu sinceramente não irei listar todos aqui pois duvido que alguém baixe e tente rodar este código...
+MAS! se você quiser, entra em contato comigo que em 5 minutos te respondo :)
