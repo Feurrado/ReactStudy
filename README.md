@@ -1,5 +1,7 @@
 # SETUP RocketSeat
 
+Obs: falta arrumar a estrutura de todo o código, está "raw" e feio. Se procura beleza acessa meu insta.
+
 Projeto construído no evento SETUP da RocketSeat.
 Server, DB, Web e Mobile.
 
@@ -13,7 +15,7 @@ Server, DB, Web e Mobile.
 - CSS
 - React.JS
 - SQLite
-- JavaScript
+- TyperScript
 - Git e GitHub
 - Frameworks diversos como Axios, dayjs, TailWind, Prisma entre outros...
 
