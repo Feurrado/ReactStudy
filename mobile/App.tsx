@@ -8,7 +8,6 @@ import {
   Inter_700Bold,
   Inter_800ExtraBold
 } from '@expo-google-fonts/inter';
-
 import { Loading } from './src/components/Loading';
 import { Routes } from './src/routes';
 

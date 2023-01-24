@@ -1,10 +1,8 @@
 import { useCallback, useState } from 'react';
 import { Text, View, ScrollView, Alert } from 'react-native';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
-
 import { api } from '../lib/axios';
 import { generateRangeDatesFromYearStart } from '../utils/generate-range-between-dates';
-
 import { Header } from '../components/Header';
 import { Loading } from '../components/Loading';
 import { HabitDay, DAY_SIZE } from '../components/HabitDay';
@@ -25,7 +23,6 @@ type SummaryProps = Array<{
 export function Home() {
   const [loading, setLoading] = useState(true)
   const [summary, setSummary] = useState<SummaryProps | null>(null)
-
   const { navigate } = useNavigation()
 
   async function fetchData() {
@@ -54,7 +51,6 @@ export function Home() {
   return (
     <View className='flex-1 bg-background px-8 pt-16'>
       <Header />
-
       <View className="flex-row mt-6 mb-2">
         {
           weekDays.map((weekDay, i) => (

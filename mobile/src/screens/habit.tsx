@@ -3,10 +3,8 @@ import { useRoute } from "@react-navigation/native";
 import { Alert, ScrollView, Text, View } from "react-native";
 import dayjs from "dayjs";
 import clsx from "clsx";
-
 import { api } from "../lib/axios";
 import { generateProgressPercentage } from "../utils/generate-progress-percentage";
-
 import { BackButton } from "../components/BackButton";
 import { ProgressBar } from "../components/Progress.Bar";
 import { Checkbox } from "../components/Checkbox";
@@ -16,7 +14,6 @@ import { HabitsEmpty } from "../components/HabitsEmpty";
 interface Params {
   date: string;
 }
-
 interface DayInfoProps {
   completedHabits: string[];
   possibleHabits: {
@@ -29,21 +26,17 @@ export function Habit() {
   const [loading, setLoading] = useState(true);
   const [dayInfo, setDayInfo] = useState<DayInfoProps | null>(null);
   const [completedHabits, setCompletedHabits] = useState<string[]>([])
-
   const route = useRoute()
   const { date } = route.params as Params;
-
   const parsedDate = dayjs(date);
   const isDateInPast = parsedDate.endOf('day').isBefore(new Date());
   const dayOfWeek = parsedDate.format('dddd');
   const dayAndMonth = parsedDate.format('DD/MM');
-
   const habitsProgress = dayInfo?.possibleHabits?.length ? generateProgressPercentage(dayInfo.possibleHabits.length, completedHabits.length) : 0
 
   async function fetchHabits() {
     try {
       setLoading(true)
-
       const response = await api.get('/day', { params: { date } });
       setDayInfo(response.data);
       setCompletedHabits(response.data.completedHabits ?? [])
@@ -58,7 +51,6 @@ export function Habit() {
   async function handleToggleHabits(habitId: string) {
     try {
       await api.patch(`/habits/${habitId}/toggle`);
-
       if (completedHabits?.includes(habitId)) {
         setCompletedHabits(prevState => prevState.filter(habit => habit !== habitId));
       } else {
@@ -73,7 +65,6 @@ export function Habit() {
   useEffect(() => {
     fetchHabits()
   }, [])
-
   if (loading) {
     return (
       <Loading />
@@ -98,23 +89,24 @@ export function Habit() {
 
         <ProgressBar progress={habitsProgress} />
 
-        <View className={clsx("mt-6", {
-            ['opacity-50']: isDateInPast
-          })}>
-          {
-            dayInfo?.possibleHabits ?
-            dayInfo.possibleHabits?.map(habit => (
-              <Checkbox 
-                key={habit.id}
-                title={habit.title}
-                checked={completedHabits?.includes(habit.id)}
-                onPress={() => handleToggleHabits(habit.id)}
-                disabled={isDateInPast}
-              />
-            ))
-            : 
-            <HabitsEmpty />
-          }
+    <View className={clsx("mt-6", {
+      ['opacity-50']: isDateInPast
+    })}
+      >
+      {
+        dayInfo?.possibleHabits ?
+        dayInfo.possibleHabits?.map(habit => (
+    <Checkbox 
+        key={habit.id}
+        title={habit.title}
+        checked={completedHabits?.includes(habit.id)}
+        onPress={() => handleToggleHabits(habit.id)}
+        disabled={isDateInPast}
+      />
+          ))
+          : 
+          <HabitsEmpty />
+        }
         </View>
 
         {
@@ -125,6 +117,6 @@ export function Habit() {
           )
         }
       </ScrollView>
-    </View>
+        </View>
   )
 }

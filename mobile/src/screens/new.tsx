@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Alert, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { Feather } from '@expo/vector-icons'
 import colors from "tailwindcss/colors";
-
 import { BackButton } from "../components/BackButton";
 import { Checkbox } from "../components/Checkbox";
 import { api } from "../lib/axios";
@@ -26,12 +25,9 @@ export function New() {
       if (!title.trim() || weekDays.length === 0) {
         Alert.alert('Novo hábito', 'Informe o nome do hábito e escolha a periodicidade.')
       }
-
       await api.post('/habits', { title, weekDays })
-      
       setTitle('');
       setWeekDays([]);
-
       Alert.alert('Novo hábito', 'Hábito criado com sucesso!');
     } catch (error) {
       console.log(error)
@@ -46,15 +42,12 @@ export function New() {
         contentContainerStyle={{ paddingBottom: 100 }}
       >
         <BackButton />
-
         <Text className="mt-6 text-white font-extrabold text-3xl">
           Criar hábito
         </Text>
-
         <Text className="mt-6 text-white font-semibold text-base">
           Qual seu comprometimento?
         </Text>
-
         <TextInput 
           className="h-12 pl-4 rounded-lg mt-3 bg-zinc-900 text-white border-2 border-zinc-800 focus:border-green-600"
           placeholder="Exercícios, dormir bem, etc..."
