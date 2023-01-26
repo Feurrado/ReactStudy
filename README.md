@@ -1,6 +1,7 @@
 # SETUP RocketSeat
 
-Projeto construído no evento SETUP da RocketSeat.
+Projeto construído no evento SETUP da RocketSeat. 
+<br>
 Server, DB, Web e Mobile.
 
 ![preview]( /github/1.png)
